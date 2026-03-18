@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abir Ahmed | Portfolio</title>
-  <meta name="description" content="Abir Ahmed - Urban Planning, GIS, Geospatial Analysis, Research, CV, and fieldwork portfolio." />
+  <meta name="description" content="Abir Ahmed - Urban Planning, GIS, Geospatial Analysis, Research, Certifications, CV, and fieldwork portfolio." />
 
   <style>
     :root {
@@ -104,7 +104,7 @@
       padding: 44px 0 88px;
     }
 
-    #home, #about, #research, #cv, #works {
+    #home, #about, #research, #certifications, #cv, #works {
       scroll-margin-top: 90px;
     }
 
@@ -152,7 +152,8 @@
     }
 
     .hero-actions,
-    .cv-actions {
+    .cv-actions,
+    .cert-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
@@ -167,6 +168,7 @@
       border: 1px solid var(--line);
       font-weight: 700;
       transition: 0.22s ease;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -263,6 +265,12 @@
       gap: 22px;
     }
 
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
     .work-card {
       background: linear-gradient(180deg, var(--card-2), var(--card));
       border: 1px solid var(--line);
@@ -348,6 +356,56 @@
       background: rgba(255,255,255,0.04);
       color: var(--muted);
       line-height: 1.6;
+    }
+
+    .expand-toggle {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(79,209,197,0.22);
+      background: rgba(79,209,197,0.08);
+      color: #d6f7ff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .expand-details {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      display: none;
+    }
+
+    .expand-details.active {
+      display: block;
+    }
+
+    .expand-details h4 {
+      margin: 14px 0 8px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .expand-details ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .expand-details li {
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+
+    .cert-preview {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+      background: #0d1b2d;
     }
 
     .modal {
@@ -471,6 +529,12 @@
       color: var(--muted);
     }
 
+    @media (max-width: 1200px) {
+      .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 980px) {
       .hero-wrap,
       .works-grid {
@@ -484,7 +548,8 @@
 
     @media (max-width: 720px) {
       .works-grid,
-      .mini-info {
+      .mini-info,
+      .summary-grid {
         grid-template-columns: 1fr;
       }
 
@@ -516,6 +581,7 @@
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#research">Research</a>
+        <a href="#certifications">Certifications</a>
         <a href="#cv">CV</a>
         <a href="#works">Works</a>
       </nav>
@@ -543,8 +609,8 @@
           </div>
           <div class="mini-info">
             <div class="item">
-              <strong id="folderCount">8</strong>
-              <span>Work Folders</span>
+              <strong id="folderCount">4</strong>
+              <span>Portfolio Categories</span>
             </div>
             <div class="item">
               <strong>IELTS 7.5</strong>
@@ -565,12 +631,12 @@
           <div>
             <h2>Profile Summary</h2>
             <p>
-              A concise overview of my education, professional experience, research interests, and technical strengths.
+              A concise overview of my education, professional experience, internship training, research interests, and technical strengths.
             </p>
           </div>
         </div>
 
-        <div class="works-grid">
+        <div class="summary-grid">
           <article class="work-card static-card">
             <div class="work-content">
               <div class="work-top">
@@ -592,6 +658,54 @@
               <p>
                 Worked as Assistant Urban Planner at Sheltech Consultants Private Limited and as GIS Operator at Development Design Consultant Limited, with experience in masterplan projects, field surveys, GIS data handling, and stakeholder engagement.
               </p>
+
+              <button class="expand-toggle" type="button" onclick="toggleExperienceDetails()" id="experienceToggle">
+                View Responsibilities & Projects
+              </button>
+
+              <div class="expand-details" id="experienceDetails">
+                <h4>Assistant Urban Planner — Sheltech Consultants Private Limited (Jan 2024 – Jan 2025)</h4>
+                <p style="color: var(--muted); margin-bottom: 10px;">
+                  <strong style="color: var(--text);">Projects:</strong> Upazila Town Masterplan Projects (Cumilla, Banshkhali, Chandanaish, Kutubdia, etc.); Feasibility Study for Bangladesh Economic Zone Authority (BEZA).
+                </p>
+                <ul>
+                  <li>Conducted site visits and engaged with government officials and community representatives to gather input data such as mouza sheets, masterplan documents, boundary demarcations, gazettes, and heritage records during inception phases.</li>
+                  <li>Organized workshops and validation sessions to incorporate stakeholder feedback and ensure project methodologies aligned with community needs.</li>
+                  <li>Led field surveys and managed logistics for survey teams, ensuring accurate data collection on socio-economic, transportation, geo-technical, water, sanitation, waste, and energy sectors.</li>
+                  <li>Conducted Key Informant Interviews (KII) and Participatory Rapid Appraisal (PRA) in Cumilla, integrating local and political stakeholders into project processes.</li>
+                  <li>Organized seminars to raise awareness among policymakers and the public, incorporating their feedback into planning.</li>
+                  <li>Developed and compiled comprehensive master plans by integrating GIS data, growth zone identification, and policy recommendations while prioritizing urban development strategies.</li>
+                  <li>Conducted and led industrial assessment surveys for BEZA feasibility studies.</li>
+                </ul>
+
+                <h4>GIS Operator — Development Design Consultant Limited, Bangladesh (Sept 2023 – Nov 2023)</h4>
+                <p style="color: var(--muted); margin-bottom: 10px;">
+                  <strong style="color: var(--text);">Project:</strong> National Digital Land Zoning Project.
+                </p>
+                <ul>
+                  <li>Digitized mouza maps and conducted quality checks (QC) for accuracy.</li>
+                  <li>Cross-checked and updated the mouza database in GIS with the latest data.</li>
+                  <li>Generated reports of digitized mouza maps and performed topology checks.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card static-card">
+            <div class="work-content">
+              <div class="work-top">
+                <h3>Internship Training</h3>
+                <span class="count-badge">2022</span>
+              </div>
+              <p>
+                Internship Trainee at Global Survey Consultants, Bangladesh (Nov 2022 – Dec 2022), where I developed practical understanding of GIS tools, projection systems, and spatial planning workflows.
+              </p>
+              <div class="expand-details active" style="display:block; padding-top: 10px; border-top: 1px solid var(--line);">
+                <ul>
+                  <li>Learned fundamentals of ArcGIS tools and projection systems.</li>
+                  <li>Gained hands-on experience in detail area planning, planning concepts, digitizing, and geo-referencing maps.</li>
+                </ul>
+              </div>
             </div>
           </article>
 
@@ -678,6 +792,58 @@
       </div>
     </section>
 
+    <section id="certifications">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Certifications</h2>
+            <p>
+              Selected certificates that reflect my additional training in data analysis and GIS fundamentals.
+            </p>
+          </div>
+        </div>
+
+        <div class="works-grid">
+          <article class="work-card static-card">
+            <img class="cert-preview" src="WhatsApp Image 2026-03-16 at 9.04.58 PM.jpeg" alt="Data Analyst certificate preview" loading="lazy" decoding="async">
+            <div class="work-content">
+              <div class="work-top">
+                <h3>Certified Data Analyst</h3>
+                <span class="count-badge">Data Solution 360</span>
+              </div>
+              <p>
+                Successfully completed the 5-month Data Analyst Job Ready Bootcamp (Batch-2519). Issue date: 14 March 2026. Certificate ID: DS360DA2519AA19.
+              </p>
+              <div class="cert-actions">
+                <a class="btn btn-primary" href="Data Analyst.pdf" target="_blank" rel="noopener noreferrer">View Certificate</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card static-card">
+            <img class="cert-preview" src="profile.png" alt="Fundamentals of GIS certificate placeholder preview" loading="lazy" decoding="async" style="object-fit: contain; background: #f5f5f5;">
+            <div class="work-content">
+              <div class="work-top">
+                <h3>Fundamentals of GIS</h3>
+                <span class="count-badge">Coursera / UC Davis</span>
+              </div>
+              <p>
+                Successfully completed the online non-credit course “Fundamentals of GIS,” authorized by the University of California, Davis and offered through Coursera. Completed on 17 May 2021.
+              </p>
+              <div class="cert-actions">
+                <a class="btn btn-primary" href="Coursera G979CWXF25ED.pdf" target="_blank" rel="noopener noreferrer">View Certificate</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="note-card">
+          <strong style="color: var(--text); display:block; margin-bottom: 8px;">Tip</strong>
+          If you later save certificate preview images separately, you can replace the current preview placeholders with those image files for a better visual presentation.
+        </div>
+      </div>
+    </section>
+
     <section id="cv">
       <div class="container">
         <div class="section-head">
@@ -706,9 +872,9 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>My Work Folders</h2>
+            <h2>My Work Categories</h2>
             <p>
-              Selected fieldwork, survey documentation, technical work samples, and project-related visuals. Click any folder to open the image slider.
+              Selected fieldwork, survey documentation, technical outputs, and project-related visuals grouped into four professional portfolio categories. Click any category to open the image slider.
             </p>
           </div>
         </div>
@@ -731,7 +897,7 @@
     <div class="modal-box">
       <div class="modal-head">
         <div>
-          <h3 id="modalTitle">Folder Title</h3>
+          <h3 id="modalTitle">Category Title</h3>
           <p id="modalSubtitle">Image slider preview</p>
         </div>
         <button class="close-btn" onclick="closeModal()">✕</button>
@@ -751,124 +917,33 @@
   </div>
 
   <script>
-   const folders = [
-  {
-    title: "Geotechnical & Field Investigation",
-    description: "Subsurface investigation, borehole drilling, SPT tests, and soil sampling documentation.",
-    cover: "borehole-drilling.jpg",
-    images: [
-      "borehole-drilling.jpg",
-      "borehole-log-sheet.jpg",
-      "borehole-log-document.jpg",
-      "borehole-record-sheet.jpg",
-      "spt-drilling-team.jpg",
-      "spt-field-drilling.jpg",
-      "spt-soil-core-bh04.jpg",
-      "spt-test-supervision.jpg",
-      "soil-core-measurement.jpg",
-      "soil-core-samples.jpg",
-      "soil-sample-bh05.jpg",
-      "soil-type.jpg"
-    ]
-  },
-
-  {
-    title: "Survey & Community Engagement",
-    description: "Field surveys, PRA activities, stakeholder consultation, and household data collection.",
-    cover: "field-survey-team.jpg",
-    images: [
-      "field-survey-team.jpg",
-      "field-survey-team-1.jpg",
-      "measuring-road-width.jpg",
-      "road-width-check-survey.jpg",
-      "railway-width-measurement-survey.jpg",
-      "survey-of-local-road.jpg",
-      "survey-earthen-road.jpg",
-      "earthen-road-survey.jpg",
-      "local-culvert-updating-into-survey-sheet.jpg",
-      "local-land-mark-check-into-survey-sheet.jpg",
-      "survey-of-house-condition-data.jpg",
-      "semi-pucca-structure-survey.jpg",
-      "household-survey.jpg",
-      "collecting-opinions.jpg",
-      "field-data-collection-phase.jpg",
-      "response-record.jpg",
-      "taking-notes-.jpg",
-      "interaction-with-inhabitants.jpg",
-      "pra-session.jpg",
-      "pra-session-businessmen.jpg",
-      "participants.jpg",
-      "women-children-group.jpg",
-      "discussion-with-women-local-problems.jpg",
-      "problem-discussion-from-chairman.jpg",
-      "chamber-of-commerce-for-economic-feasibility.jpg",
-      "consultation-with-higher-officials.jpg",
-      "meeting-with-acting-director-of-bangladesh-zone.jpg",
-      "seminar-baisgaon.jpg",
-      "participatory-seminar.jpg"
-    ]
-  },
-
-  {
-    title: "Planning, GIS & Spatial Analysis",
-    description: "GIS mapping, land use analysis, spatial datasets, and planning outputs.",
-    cover: "landuse-change.jpg",
-    images: [
-      "landuse-change.jpg",
-      "digitized-mouza-map.jpg",
-      "upazila-map.jpg",
-      "population-density-map.jpg",
-      "spatial-population-distribution.jpg",
-      "existing-landuse-map.jpg",
-      "administrative-boundary.jpg",
-      "administrative-boundaries-with-educational-institutions.jpg",
-      "area-planning.jpeg",
-      "site-demo-plan.jpeg",
-      "site-planning.jpeg",
-      "map-of-primary-schools.jpg",
-      "map-secondary-school.jpg",
-      "educational-institutions.jpg",
-      "health-facilities-mapping.jpg",
-      "teacher-student-ratio.jpg",
-      "primary-schools.jpg",
-      "high-schools-in-upazila.jpg",
-      "available-open-space.jpg",
-      "open-space-locations.jpg",
-      "playgrounds-mapping.jpg"
-    ]
-  },
-
-  {
-    title: "Environment & Risk Assessment",
-    description: "Environmental analysis, hazard mapping, and disaster-related assessments.",
-    cover: "earthquake-zone-distribution.jpg",
-    images: [
-      "earthquake-zone-distribution.jpg",
-      "earthquake-intensity.jpg",
-      "drought-prone-regions.jpg",
-      "flood-prone-zones.jpg",
-      "cropland-survey.jpg",
-      "garments-survey.jpeg",
-      "agricultural-landuse.jpg",
-      "waterbody-data-inclusion.jpg",
-      "waterbody-condition.jpg",
-      "verification-of-crop-land.jpg",
-      "deteriorated-housing-condition-updating.jpg"
-    ]
-  }
-];
+    const folders = [
+      {
+        title: "Geotechnical & Field Investigation",
+        description: "Subsurface investigation, borehole drilling, SPT tests, and soil sampling documentation.",
+        cover: "borehole-drilling.jpg",
+        images: [
+          "borehole-drilling.jpg",
+          "borehole-log-sheet.jpg",
+          "borehole-log-document.jpg",
+          "borehole-record-sheet.jpg",
+          "spt-drilling-team.jpg",
+          "spt-field-drilling.jpg",
+          "spt-soil-core-bh04.jpg",
+          "spt-test-supervision.jpg",
+          "soil-core-measurement.jpg",
+          "soil-core-samples.jpg",
+          "soil-sample-bh05.jpg",
+          "soil-type.jpg"
+        ]
       },
       {
-        title: "Physical Feature Survey",
-        description: "Field survey images on physical features, structures, roads, and local infrastructure.",
+        title: "Survey & Community Engagement",
+        description: "Field surveys, PRA activities, stakeholder consultation, and household data collection.",
         cover: "field-survey-team.jpg",
         images: [
           "field-survey-team.jpg",
           "field-survey-team-1.jpg",
-          "administrative-boundary.jpg",
-          "administrative-boundaries-with-educational-institutions.jpg",
-          "area-planning.jpeg",
-          "existing-landuse-map.jpg",
           "measuring-road-width.jpg",
           "road-width-check-survey.jpg",
           "railway-width-measurement-survey.jpg",
@@ -877,92 +952,30 @@
           "earthen-road-survey.jpg",
           "local-culvert-updating-into-survey-sheet.jpg",
           "local-land-mark-check-into-survey-sheet.jpg",
-          "crosscheck-with-the-digitized-image.jpg",
-          "cross-validation-of-of-local-landmark.jpg",
           "survey-of-house-condition-data.jpg",
           "semi-pucca-structure-survey.jpg",
-          "verification-of-crop-land.jpg",
-          "waterbody-condition.jpg"
-        ]
-      },
-      {
-        title: "PRA Activities",
-        description: "Participatory rural appraisal sessions, local engagement, and community discussions.",
-        cover: "pra-session.jpg",
-        images: [
-          "pra-session.jpg",
-          "pra-session-businessmen.jpg",
-          "pra-expert-visiting-the-session.jpg",
-          "children-group-pra-session.jpg",
-          "conducting-pra-session-union.jpg",
-          "initiation-pra.jpg",
-          "participants.jpg",
-          "women-children-group.jpg",
-          "discussion-among-different-groups.jpg",
-          "discussion-with-the-vulnerable-group.jpg",
-          "discussion-with-women-local-problems.jpg",
-          "problem-discussion-from-chairman.jpg",
-          "writing-problems-localities.jpg",
-          "major-problem-identification-from-childrens-survey.jpg",
-          "including-mising-structures.jpg",
-          "including-missing-structures.jpg"
-        ]
-      },
-      {
-        title: "Feasibility / Consultation",
-        description: "Meetings, consultation work, and project-related stakeholder engagement.",
-        cover: "chamber-of-commerce-for-economic-feasibility.jpg",
-        images: [
-          "chamber-of-commerce-for-economic-feasibility.jpg",
-          "consultation-with-higher-officials.jpg",
-          "explaining-survey-process-to-higher-officials.jpg",
-          "meeting-with-acting-director-of-bangladesh-zone.jpg",
-          "handing-over-inception-report-eng.jpeg",
-          "handing-over-progress-report.jpeg",
-          "discussion-on-inception-report.jpeg",
-          "rally-seminar.jpg",
-          "seminar-baisgaon.jpg",
-          "seminar-participation-pra-meeting.jpg",
-          "participatory-seminar.jpg",
-          "people-at-seminar.jpg",
-          "setting-up-seminar.jpg"
-        ]
-      },
-      {
-        title: "Transportation Survey",
-        description: "Transport-related fieldwork, route checks, and survey documentation.",
-        cover: "local-transport-survey.jpg",
-        images: [
-          "local-transport-survey.jpg",
-          "surveying-hbb-road-width.jpg",
-          "open-space-locations.jpg",
-          "playgrounds-mapping.jpg",
-          "updating-faulty-road-to-inform-local-authorities.jpg",
-          "updating-missing-structures.jpg",
-          "updating-pre-built-structure-in-survey-data.jpg"
-        ]
-      },
-      {
-        title: "Social / Household Survey",
-        description: "Household interviews, local data collection, and social survey work.",
-        cover: "household-survey.jpg",
-        images: [
           "household-survey.jpg",
           "collecting-opinions.jpg",
           "field-data-collection-phase.jpg",
-          "survey-data-entry-of-ancient-household.jpg",
           "response-record.jpg",
           "taking-notes-.jpg",
-          "local-representatives.jpg",
-          "local-stakeholders.jpg",
           "interaction-with-inhabitants.jpg",
-          "survey-setup.jpg",
-          "survey-at-night.jpg"
+          "pra-session.jpg",
+          "pra-session-businessmen.jpg",
+          "participants.jpg",
+          "women-children-group.jpg",
+          "discussion-with-women-local-problems.jpg",
+          "problem-discussion-from-chairman.jpg",
+          "chamber-of-commerce-for-economic-feasibility.jpg",
+          "consultation-with-higher-officials.jpg",
+          "meeting-with-acting-director-of-bangladesh-zone.jpg",
+          "seminar-baisgaon.jpg",
+          "participatory-seminar.jpg"
         ]
       },
       {
-        title: "GIS / Mapping Outputs",
-        description: "Maps, planning visuals, land use, and spatial analysis outputs.",
+        title: "Planning, GIS & Spatial Analysis",
+        description: "GIS mapping, land use analysis, spatial datasets, and planning outputs.",
         cover: "landuse-change.jpg",
         images: [
           "landuse-change.jpg",
@@ -970,24 +983,27 @@
           "upazila-map.jpg",
           "population-density-map.jpg",
           "spatial-population-distribution.jpg",
+          "existing-landuse-map.jpg",
+          "administrative-boundary.jpg",
+          "administrative-boundaries-with-educational-institutions.jpg",
+          "area-planning.jpeg",
           "site-demo-plan.jpeg",
           "site-planning.jpeg",
           "map-of-primary-schools.jpg",
           "map-secondary-school.jpg",
           "educational-institutions.jpg",
           "health-facilities-mapping.jpg",
-          "healthcare-training-centres-location.jpg",
-          "religious-education-centres.jpg",
-          "teacher-student-mapping.jpg",
           "teacher-student-ratio.jpg",
           "primary-schools.jpg",
           "high-schools-in-upazila.jpg",
-          "available-open-space.jpg"
+          "available-open-space.jpg",
+          "open-space-locations.jpg",
+          "playgrounds-mapping.jpg"
         ]
       },
       {
-        title: "Disaster / Environment",
-        description: "Environmental, disaster, and condition assessment related visuals.",
+        title: "Environment & Risk Assessment",
+        description: "Environmental analysis, hazard mapping, and disaster-related assessments.",
         cover: "earthquake-zone-distribution.jpg",
         images: [
           "earthquake-zone-distribution.jpg",
@@ -998,6 +1014,8 @@
           "garments-survey.jpeg",
           "agricultural-landuse.jpg",
           "waterbody-data-inclusion.jpg",
+          "waterbody-condition.jpg",
+          "verification-of-crop-land.jpg",
           "deteriorated-housing-condition-updating.jpg"
         ]
       }
@@ -1014,6 +1032,15 @@
 
     let currentFolderIndex = 0;
     let currentSlideIndex = 0;
+
+    function toggleExperienceDetails() {
+      const box = document.getElementById("experienceDetails");
+      const button = document.getElementById("experienceToggle");
+      box.classList.toggle("active");
+      button.textContent = box.classList.contains("active")
+        ? "Hide Responsibilities & Projects"
+        : "View Responsibilities & Projects";
+    }
 
     function makeThumb(folder, index) {
       return `
