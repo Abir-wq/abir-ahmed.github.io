@@ -697,27 +697,7 @@
     let currentFolderIndex = 0;
     let currentSlideIndex = 0;
 
-    function renderCards() {
-      worksGrid.innerHTML = folders.map((folder, index) => `
-        <article class="work-card" onclick="openFolder(${index})">
-          <div class="work-thumb">
-            <img src="${folder.cover}" alt="${folder.title}">
-          </div>
-          <div class="work-content">
-            <div class="work-top">
-              <h3>${folder.title}</h3>
-              <span class="count-badge">${folder.images.length} images</span>
-            </div>
-            <p>${folder.description}</p>
-            <span class="open-link">Click to open slider →</span>
-          </div>
-        </article>
-      `).join("");
-
-      folderCount.textContent = folders.length;
-     
-      imageCount.textContent = totalImages + "+";
-    }
+   
 
     function openFolder(folderIndex) {
       currentFolderIndex = folderIndex;
