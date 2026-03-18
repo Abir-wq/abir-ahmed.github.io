@@ -22,6 +22,7 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background:
@@ -558,7 +559,7 @@
           <div>
             <h2>My Work Folders</h2>
             <p>
-              Each card below represents one folder. Replace the sample image paths with your real folder names and image files. When someone clicks a card, the images inside that folder will open in a slider popup.
+              Each folder below presents selected fieldwork, survey documentation, technical work samples, and project-related visuals. Click any folder to open the image slider.
             </p>
           </div>
         </div>
@@ -566,8 +567,8 @@
         <div class="works-grid" id="worksGrid"></div>
 
         <div class="note-card">
-          <strong style="color: var(--text); display:block; margin-bottom: 8px;">How to use this:</strong>
-          Put your images inside folders like <code style="color:#d6f7ff;">images/masw/</code>, <code style="color:#d6f7ff;">images/physical-feature-survey/</code>, and so on. Then update the JavaScript image list only once.
+          <strong style="color: var(--text); display:block; margin-bottom: 8px;">Portfolio Note</strong>
+          This portfolio highlights selected work from geospatial analysis, field surveys, transportation studies, and planning-related documentation.
         </div>
       </div>
     </section>
@@ -693,11 +694,28 @@
     const dotsContainer = document.getElementById("dots");
     const folderCount = document.getElementById("folderCount");
 
-
     let currentFolderIndex = 0;
     let currentSlideIndex = 0;
 
-   
+    function renderCards() {
+      worksGrid.innerHTML = folders.map((folder, index) => `
+        <article class="work-card" onclick="openFolder(${index})">
+          <div class="work-thumb">
+            <img src="${folder.cover}" alt="${folder.title}">
+          </div>
+          <div class="work-content">
+            <div class="work-top">
+              <h3>${folder.title}</h3>
+              <span class="count-badge">${folder.images.length} images</span>
+            </div>
+            <p>${folder.description}</p>
+            <span class="open-link">Click to open slider →</span>
+          </div>
+        </article>
+      `).join("");
+
+      folderCount.textContent = folders.length;
+    }
 
     function openFolder(folderIndex) {
       currentFolderIndex = folderIndex;
@@ -726,6 +744,7 @@
     function updateSlider() {
       const folder = folders[currentFolderIndex];
       const images = folder.images;
+
       slideImage.src = images[currentSlideIndex];
       slideImage.alt = folder.title + " image " + (currentSlideIndex + 1);
       modalTitle.textContent = folder.title;
