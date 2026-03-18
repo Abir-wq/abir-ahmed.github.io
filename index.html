@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abir Ahmed | Works Portfolio</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1729;
+      --card: rgba(255,255,255,0.05);
+      --card-2: rgba(255,255,255,0.08);
+      --line: rgba(255,255,255,0.1);
+      --text: #f8fafc;
+      --muted: #9fb0c8;
+      --accent: #4fd1c5;
+      --accent-2: #60a5fa;
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(79,209,197,0.12), transparent 26%),
+        radial-gradient(circle at top right, rgba(96,165,250,0.12), transparent 24%),
+        linear-gradient(180deg, #030712 0%, var(--bg) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(3, 7, 18, 0.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 90px 0 48px;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--accent);
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-size: 0.92rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 1.04;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      transition: 0.25s ease;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      border: none;
+      color: #00131a;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6 140%);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-preview {
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(79,209,197,0.22), rgba(96,165,250,0.2));
+      margin-bottom: 18px;
+    }
+
+    .hero-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mini-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .mini-info .item {
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      padding: 14px;
+      text-align: center;
+    }
+
+    .mini-info strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    section { padding: 40px 0 88px; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      margin-bottom: 8px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .work-card {
+      background: linear-gradient(180deg, var(--card-2), var(--card));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: 0.28s ease;
+      cursor: pointer;
+    }
+
+    .work-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(79,209,197,0.32);
+    }
+
+    .work-thumb {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #0d1b2d;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .work-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .work-card:hover .work-thumb img { transform: scale(1.05); }
+
+    .work-content {
+      padding: 20px;
+    }
+
+    .work-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .work-top h3 {
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .count-badge {
+      white-space: nowrap;
+      padding: 7px 10px;
+      font-size: 0.84rem;
+      color: var(--accent);
+      border-radius: 999px;
+      border: 1px solid rgba(79,209,197,0.22);
+      background: rgba(79,209,197,0.08);
+    }
+
+    .work-content p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-bottom: 14px;
+    }
+
+    .open-link {
+      color: #d6f7ff;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .note-card {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.84);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      z-index: 999;
+    }
+
+    .modal.active { display: flex; }
+
+    .modal-box {
+      width: min(1100px, 100%);
+      background: linear-gradient(180deg, #0a1424, #07111f);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .modal-head p {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 0.94rem;
+    }
+
+    .close-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .slider-wrap {
+      position: relative;
+      background: #06101c;
+    }
+
+    .slide-image {
+      width: 100%;
+      height: min(72vh, 700px);
+      object-fit: contain;
+      background: #06101c;
+    }
+
+    .slide-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.38);
+      color: white;
+      cursor: pointer;
+      font-size: 1.4rem;
+      z-index: 2;
+    }
+
+    .slide-btn.prev { left: 16px; }
+    .slide-btn.next { right: 16px; }
+
+    .slide-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px 20px;
+      border-top: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+
+    .slide-meta p {
+      color: var(--muted);
+    }
+
+    .dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.22);
+      cursor: pointer;
+    }
+
+    .dot.active { background: var(--accent); }
+
+    footer {
+      padding: 0 0 42px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 980px) {
+      .hero-wrap,
+      .works-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .works-grid,
+      .mini-info {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner,
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .slide-image {
+        height: 48vh;
+      }
+
+      .slide-btn {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">Abir<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#works">Works</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-wrap">
+        <div>
+          <div class="eyebrow">Urban Planning • GIS • Geospatial Analysis</div>
+          <h1>Hi, I'm <span>Abir Ahmed</span>.</h1>
+          <p>
+            Masters’ applicant with expertise in geospatial analysis, disaster management, and urban planning. My work combines GIS, remote sensing, spatial analysis, transportation planning, and environmental planning with strong field experience and research interest in land-use change and travel behavior.
+          </p>
+          <div class="hero-actions">
+            <a href="#works" class="btn btn-primary">Explore Works</a>
+            <button class="btn btn-secondary" type="button" onclick="openFolder(0)">Open First Folder</button>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-preview">
+            <img src="images/profile.png" alt="Abir Ahmed profile photo">
+          </div>
+          <div class="mini-info">
+            <div class="item">
+              <strong id="folderCount">8</strong>
+              <span>Work Folders</span>
+            </div>
+            <div class="item">
+              <strong>IELTS 7.5</strong>
+              <span>English Score</span>
+            </div>
+            <div class="item">
+              <strong>GIS + Planning</strong>
+              <span>Core Focus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Profile Summary</h2>
+            <p>
+              A quick overview of my education, experience, research interests, and technical strengths.
+            </p>
+          </div>
+        </div>
+
+        <div class="works-grid">
+          <article class="work-card" style="cursor: default;">
+            <div class="work-content">
+              <div class="work-top">
+                <h3>Education</h3>
+                <span class="count-badge">CUET</span>
+              </div>
+              <p>
+                Bachelor of Urban and Regional Planning from Chittagong University of Engineering and Technology (2018–2023), completed with CGPA 3.20/4.00.
+              </p>
+            </div>
+          </article>
+
+          <article class="work-card" style="cursor: default;">
+            <div class="work-content">
+              <div class="work-top">
+                <h3>Professional Experience</h3>
+                <span class="count-badge">2023–2025</span>
+              </div>
+              <p>
+                Worked as Assistant Urban Planner at Sheltech Consultants Private Limited and as GIS Operator at Development Design Consultant Limited, with experience in masterplan projects, field surveys, GIS data handling, and stakeholder engagement.
+              </p>
+            </div>
+          </article>
+
+          <article class="work-card" style="cursor: default;">
+            <div class="work-content">
+              <div class="work-top">
+                <h3>Research & Skills</h3>
+                <span class="count-badge">GIS / RS</span>
+              </div>
+              <p>
+                Research interests include land-use change, transportation planning, spatial analysis, urban geography, environmental health, and disaster management. Skilled in ArcGIS, QGIS, AutoCAD, Google Earth Engine, SPSS, Python, R, and Microsoft Office tools.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="works">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>My Work Folders</h2>
+            <p>
+              Each card below represents one folder. Replace the sample image paths with your real folder names and image files. When someone clicks a card, the images inside that folder will open in a slider popup.
+            </p>
+          </div>
+        </div>
+
+        <div class="works-grid" id="worksGrid"></div>
+
+        <div class="note-card">
+          <strong style="color: var(--text); display:block; margin-bottom: 8px;">How to use this:</strong>
+          Put your images inside folders like <code style="color:#d6f7ff;">images/masw/</code>, <code style="color:#d6f7ff;">images/physical-feature-survey/</code>, and so on. Then update the JavaScript image list only once.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Abir Ahmed • Portfolio Website</div>
+  </footer>
+
+  <div class="modal" id="sliderModal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div>
+          <h3 id="modalTitle">Folder Title</h3>
+          <p id="modalSubtitle">Image slider preview</p>
+        </div>
+        <button class="close-btn" onclick="closeModal()">✕</button>
+      </div>
+
+      <div class="slider-wrap">
+        <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+        <img id="slideImage" class="slide-image" src="" alt="Project image">
+        <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+      </div>
+
+      <div class="slide-meta">
+        <p id="slideCounter">1 / 1</p>
+        <div class="dots" id="dots"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const folders = [
+      {
+        title: "MASW",
+        description: "Multichannel Analysis of Surface Waves work samples and field documentation.",
+        cover: "images/masw/1.jpg",
+        images: [
+          "images/masw/1.jpg",
+          "images/masw/2.jpg",
+          "images/masw/3.jpg"
+        ]
+      },
+      {
+        title: "Physical Feature Survey",
+        description: "Survey images showing physical features, site conditions, and observation records.",
+        cover: "images/physical-feature-survey/1.jpg",
+        images: [
+          "images/physical-feature-survey/1.jpg",
+          "images/physical-feature-survey/2.jpg",
+          "images/physical-feature-survey/3.jpg"
+        ]
+      },
+      {
+        title: "Work Sample",
+        description: "Selected work samples, drawings, documents, and technical presentation visuals.",
+        cover: "images/work-sample/1.jpg",
+        images: [
+          "images/work-sample/1.jpg",
+          "images/work-sample/2.jpg",
+          "images/work-sample/3.jpg"
+        ]
+      },
+      {
+        title: "PRA",
+        description: "PRA-related work images and participatory meeting or activity documentation.",
+        cover: "images/pra/1.jpg",
+        images: [
+          "images/pra/1.jpg",
+          "images/pra/2.jpg",
+          "images/pra/3.jpg"
+        ]
+      },
+      {
+        title: "Feasibility Study Survey",
+        description: "Survey work from chamber of commerce and related field engagement sessions.",
+        cover: "images/feasibility-study-survey/1.jpg",
+        images: [
+          "images/feasibility-study-survey/1.jpg",
+          "images/feasibility-study-survey/2.jpg",
+          "images/feasibility-study-survey/3.jpg"
+        ]
+      },
+      {
+        title: "Transportation Survey",
+        description: "Transportation survey records, field interactions, and mobility-related observations.",
+        cover: "images/transportation-survey/1.jpg",
+        images: [
+          "images/transportation-survey/1.jpg",
+          "images/transportation-survey/2.jpg",
+          "images/transportation-survey/3.jpg"
+        ]
+      },
+      {
+        title: "Field Inspection",
+        description: "Inspection visits, monitoring snapshots, and on-site documentation.",
+        cover: "images/field-inspection/1.jpg",
+        images: [
+          "images/field-inspection/1.jpg",
+          "images/field-inspection/2.jpg",
+          "images/field-inspection/3.jpg"
+        ]
+      },
+      {
+        title: "PS Logging",
+        description: "PS logging visuals, process documentation, and technical logging records.",
+        cover: "images/ps-logging/1.jpg",
+        images: [
+          "images/ps-logging/1.jpg",
+          "images/ps-logging/2.jpg",
+          "images/ps-logging/3.jpg"
+        ]
+      }
+    ];
+
+    const worksGrid = document.getElementById("worksGrid");
+    const sliderModal = document.getElementById("sliderModal");
+    const slideImage = document.getElementById("slideImage");
+    const slideCounter = document.getElementById("slideCounter");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSubtitle = document.getElementById("modalSubtitle");
+    const dotsContainer = document.getElementById("dots");
+    const folderCount = document.getElementById("folderCount");
+    const imageCount = document.getElementById("imageCount");
+
+    let currentFolderIndex = 0;
+    let currentSlideIndex = 0;
+
+    function renderCards() {
+      worksGrid.innerHTML = folders.map((folder, index) => `
+        <article class="work-card" onclick="openFolder(${index})">
+          <div class="work-thumb">
+            <img src="${folder.cover}" alt="${folder.title}">
+          </div>
+          <div class="work-content">
+            <div class="work-top">
+              <h3>${folder.title}</h3>
+              <span class="count-badge">${folder.images.length} images</span>
+            </div>
+            <p>${folder.description}</p>
+            <span class="open-link">Click to open slider →</span>
+          </div>
+        </article>
+      `).join("");
+
+      folderCount.textContent = folders.length;
+      const totalImages = folders.reduce((sum, folder) => sum + folder.images.length, 0);
+      imageCount.textContent = totalImages + "+";
+    }
+
+    function openFolder(folderIndex) {
+      currentFolderIndex = folderIndex;
+      currentSlideIndex = 0;
+      sliderModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+      updateSlider();
+    }
+
+    function closeModal() {
+      sliderModal.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+
+    function changeSlide(direction) {
+      const images = folders[currentFolderIndex].images;
+      currentSlideIndex = (currentSlideIndex + direction + images.length) % images.length;
+      updateSlider();
+    }
+
+    function goToSlide(index) {
+      currentSlideIndex = index;
+      updateSlider();
+    }
+
+    function updateSlider() {
+      const folder = folders[currentFolderIndex];
+      const images = folder.images;
+      slideImage.src = images[currentSlideIndex];
+      slideImage.alt = folder.title + " image " + (currentSlideIndex + 1);
+      modalTitle.textContent = folder.title;
+      modalSubtitle.textContent = folder.description;
+      slideCounter.textContent = `${currentSlideIndex + 1} / ${images.length}`;
+
+      dotsContainer.innerHTML = images.map((_, index) => `
+        <button class="dot ${index === currentSlideIndex ? "active" : ""}" onclick="goToSlide(${index})"></button>
+      `).join("");
+    }
+
+    sliderModal.addEventListener("click", function(event) {
+      if (event.target === sliderModal) closeModal();
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (!sliderModal.classList.contains("active")) return;
+      if (event.key === "Escape") closeModal();
+      if (event.key === "ArrowRight") changeSlide(1);
+      if (event.key === "ArrowLeft") changeSlide(-1);
+    });
+
+    renderCards();
+  </script>
+</body>
+</html>
