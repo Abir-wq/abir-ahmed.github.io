@@ -3,39 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abir Ahmed | Works Portfolio</title>
+  <title>Abir Ahmed | Portfolio</title>
+  <meta name="description" content="Abir Ahmed - Urban Planning, GIS, Geospatial Analysis, Research, CV, and fieldwork portfolio." />
+
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0c1729;
-      --card: rgba(255,255,255,0.05);
-      --card-2: rgba(255,255,255,0.08);
-      --line: rgba(255,255,255,0.1);
+      --bg: #06101d;
+      --bg-2: #081426;
+      --card: rgba(255, 255, 255, 0.05);
+      --card-2: rgba(255, 255, 255, 0.08);
+      --line: rgba(255, 255, 255, 0.10);
       --text: #f8fafc;
       --muted: #9fb0c8;
       --accent: #4fd1c5;
       --accent-2: #60a5fa;
-      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
       --radius: 22px;
       --max: 1180px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(79,209,197,0.12), transparent 26%),
-        radial-gradient(circle at top right, rgba(96,165,250,0.12), transparent 24%),
-        linear-gradient(180deg, #030712 0%, var(--bg) 100%);
       color: var(--text);
       min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(79, 209, 197, 0.10), transparent 26%),
+        radial-gradient(circle at top right, rgba(96, 165, 250, 0.10), transparent 24%),
+        linear-gradient(180deg, #020712 0%, var(--bg) 100%);
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button { font: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
 
     .container {
       width: min(calc(100% - 32px), var(--max));
@@ -45,8 +64,8 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 90;
-      background: rgba(3, 7, 18, 0.78);
+      z-index: 100;
+      background: rgba(2, 7, 18, 0.80);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
@@ -65,25 +84,38 @@
       letter-spacing: 0.3px;
     }
 
-    .brand span { color: var(--accent); }
+    .brand span {
+      color: var(--accent);
+    }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 20px;
       color: var(--muted);
+      flex-wrap: wrap;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    section {
+      padding: 44px 0 88px;
+    }
+
+    #home, #about, #research, #cv, #works {
+      scroll-margin-top: 90px;
+    }
 
     .hero {
-      padding: 90px 0 48px;
+      padding-top: 92px;
     }
 
     .hero-wrap {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
+      gap: 30px;
       align-items: center;
     }
 
@@ -99,8 +131,8 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 4.6rem);
-      line-height: 1.04;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      line-height: 1.03;
       margin-bottom: 18px;
     }
 
@@ -114,14 +146,16 @@
     .hero p {
       color: var(--muted);
       font-size: 1.05rem;
-      max-width: 650px;
+      line-height: 1.5;
+      max-width: 700px;
       margin-bottom: 26px;
     }
 
-    .hero-actions {
+    .hero-actions,
+    .cv-actions {
       display: flex;
-      flex-wrap: wrap;
       gap: 14px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -131,9 +165,12 @@
       padding: 13px 18px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      transition: 0.25s ease;
       font-weight: 700;
-      cursor: pointer;
+      transition: 0.22s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .btn-primary {
@@ -148,9 +185,8 @@
       color: var(--text);
     }
 
-    .btn:hover { transform: translateY(-2px); }
-
-    .hero-card {
+    .hero-card,
+    .cv-box {
       background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
       border: 1px solid var(--line);
       border-radius: 28px;
@@ -163,7 +199,7 @@
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid var(--line);
-      background: linear-gradient(135deg, rgba(79,209,197,0.22), rgba(96,165,250,0.2));
+      background: linear-gradient(135deg, rgba(79,209,197,0.18), rgba(96,165,250,0.18));
       margin-bottom: 18px;
     }
 
@@ -193,8 +229,6 @@
       margin-bottom: 4px;
     }
 
-    section { padding: 40px 0 88px; }
-
     .section-head {
       display: flex;
       align-items: end;
@@ -210,7 +244,17 @@
 
     .section-head p {
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
+      line-height: 1.55;
+    }
+
+    .subsection-title {
+      font-size: 1.45rem;
+      margin-bottom: 14px;
+    }
+
+    .section-gap {
+      margin-bottom: 30px;
     }
 
     .works-grid {
@@ -225,13 +269,21 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
-      transition: 0.28s ease;
+      transition: transform 0.24s ease, border-color 0.24s ease;
       cursor: pointer;
     }
 
+    .work-card.static-card {
+      cursor: default;
+    }
+
     .work-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(79,209,197,0.32);
+      transform: translateY(-6px);
+      border-color: rgba(79,209,197,0.30);
+    }
+
+    .work-card.static-card:hover {
+      transform: none;
     }
 
     .work-thumb {
@@ -245,10 +297,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
     }
-
-    .work-card:hover .work-thumb img { transform: scale(1.05); }
 
     .work-content {
       padding: 20px;
@@ -263,23 +312,25 @@
     }
 
     .work-top h3 {
-      font-size: 1.1rem;
-      line-height: 1.3;
+      font-size: 1.08rem;
+      line-height: 1.35;
     }
 
     .count-badge {
       white-space: nowrap;
       padding: 7px 10px;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       color: var(--accent);
       border-radius: 999px;
       border: 1px solid rgba(79,209,197,0.22);
       background: rgba(79,209,197,0.08);
     }
 
-    .work-content p {
+    .work-content p,
+    .cv-box p {
       color: var(--muted);
       font-size: 0.96rem;
+      line-height: 1.65;
       margin-bottom: 14px;
     }
 
@@ -296,12 +347,13 @@
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.04);
       color: var(--muted);
+      line-height: 1.6;
     }
 
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(2, 6, 23, 0.84);
+      background: rgba(2, 6, 23, 0.86);
       backdrop-filter: blur(10px);
       display: none;
       align-items: center;
@@ -310,7 +362,9 @@
       z-index: 999;
     }
 
-    .modal.active { display: flex; }
+    .modal.active {
+      display: flex;
+    }
 
     .modal-box {
       width: min(1100px, 100%);
@@ -407,7 +461,9 @@
       cursor: pointer;
     }
 
-    .dot.active { background: var(--accent); }
+    .dot.active {
+      background: var(--accent);
+    }
 
     footer {
       padding: 0 0 42px;
@@ -439,7 +495,6 @@
       }
 
       .nav-links {
-        flex-wrap: wrap;
         gap: 14px;
       }
 
@@ -460,6 +515,8 @@
       <a class="brand" href="#home">Abir<span>.</span></a>
       <nav class="nav-links">
         <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#cv">CV</a>
         <a href="#works">Works</a>
       </nav>
     </div>
@@ -476,13 +533,13 @@
           </p>
           <div class="hero-actions">
             <a href="#works" class="btn btn-primary">Explore Works</a>
-            <button class="btn btn-secondary" type="button" onclick="openFolder(0)">Open First Folder</button>
+            <a href="#cv" class="btn btn-secondary">View CV</a>
           </div>
         </div>
 
         <div class="hero-card">
           <div class="hero-preview">
-           <img src="profile.png" alt="Abir Ahmed profile photo">
+            <img src="profile.png" alt="Abir Ahmed profile photo" loading="eager" decoding="async" fetchpriority="high">
           </div>
           <div class="mini-info">
             <div class="item">
@@ -508,13 +565,13 @@
           <div>
             <h2>Profile Summary</h2>
             <p>
-              A quick overview of my education, experience, research interests, and technical strengths.
+              A concise overview of my education, professional experience, research interests, and technical strengths.
             </p>
           </div>
         </div>
 
         <div class="works-grid">
-          <article class="work-card" style="cursor: default;">
+          <article class="work-card static-card">
             <div class="work-content">
               <div class="work-top">
                 <h3>Education</h3>
@@ -526,7 +583,7 @@
             </div>
           </article>
 
-          <article class="work-card" style="cursor: default;">
+          <article class="work-card static-card">
             <div class="work-content">
               <div class="work-top">
                 <h3>Professional Experience</h3>
@@ -538,7 +595,7 @@
             </div>
           </article>
 
-          <article class="work-card" style="cursor: default;">
+          <article class="work-card static-card">
             <div class="work-content">
               <div class="work-top">
                 <h3>Research & Skills</h3>
@@ -553,13 +610,105 @@
       </div>
     </section>
 
+    <section id="research">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Research Experience</h2>
+            <p>
+              My academic work includes publications and thesis research focused on travel behavior, transportation planning, and community-based urban risk assessment.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-gap">
+          <h3 class="subsection-title">Publications</h3>
+          <div class="works-grid">
+            <article class="work-card static-card">
+              <div class="work-content">
+                <div class="work-top">
+                  <h3>Unraveling Real Life Scenario of Travel Behavior for Work-Based Trips in Agrabad, Chattogram</h3>
+                  <span class="count-badge">Preprint</span>
+                </div>
+                <p>
+                  A research preprint focused on understanding real-life travel behavior patterns for work-based trips in Agrabad, Chattogram, with implications for transportation planning and mobility analysis.
+                </p>
+                <a class="open-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5574010" target="_blank" rel="noopener noreferrer">
+                  View Publication →
+                </a>
+              </div>
+            </article>
+
+            <article class="work-card static-card">
+              <div class="work-content">
+                <div class="work-top">
+                  <h3>A Community Participatory Approach for Evaluating the Perception of Landslide Affected Community of Moti-Jharna Slum, Chattogram</h3>
+                  <span class="count-badge">ICURP 2023</span>
+                </div>
+                <p>
+                  Sarker, S.; Khan, M.F.; Sharker, M.Z.R.; Ahmed, A.; Raja, D.R. Presented at the 3rd International Conference on Urban and Regional Planning (ICURP 2023), organized by Bangladesh Institute of Planners (BIP), Dhaka, Bangladesh, pp. 403–428.
+                </p>
+                <a class="open-link" href="https://drive.google.com/file/d/1wJ_M5pUW-Ief1TbdhhjOBZtrlPDvxEto/view" target="_blank" rel="noopener noreferrer">
+                  View Paper →
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="subsection-title">Thesis</h3>
+          <div class="works-grid">
+            <article class="work-card static-card">
+              <div class="work-content">
+                <div class="work-top">
+                  <h3>Factors Affecting Mode Choice of Work-Trips Using Multinomial Logit Model: A Case Study of Agrabad, Chittagong</h3>
+                  <span class="count-badge">Bachelor Thesis</span>
+                </div>
+                <p>
+                  This undergraduate thesis applies a Multinomial Logit Model to analyze the factors influencing mode choice for work-based trips in Agrabad, Chattogram. The study examines socio-economic variables, travel characteristics, and behavioral patterns to understand urban mobility decision-making.
+                </p>
+                <a class="open-link" href="https://drive.google.com/file/d/1OtP8SY7tdFEsT8xpKaUdjwSLsY84wG_6/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  View Thesis →
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Curriculum Vitae</h2>
+            <p>
+              Download my CV for a complete overview of my education, professional experience, technical skills, research interests, and academic background.
+            </p>
+          </div>
+        </div>
+
+        <div class="cv-box">
+          <p>
+            My CV includes my academic background, professional work in urban planning and GIS, research experience, technical skills, and supporting credentials.
+          </p>
+
+          <div class="cv-actions">
+            <a href="CV_Abir Ahmed.pdf" class="btn btn-primary" download>Download CV</a>
+            <a href="CV_Abir Ahmed.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="works">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>My Work Folders</h2>
             <p>
-              Each folder below presents selected fieldwork, survey documentation, technical work samples, and project-related visuals. Click any folder to open the image slider.
+              Selected fieldwork, survey documentation, technical work samples, and project-related visuals. Click any folder to open the image slider.
             </p>
           </div>
         </div>
@@ -568,7 +717,7 @@
 
         <div class="note-card">
           <strong style="color: var(--text); display:block; margin-bottom: 8px;">Portfolio Note</strong>
-          This portfolio highlights selected work from geospatial analysis, field surveys, transportation studies, and planning-related documentation.
+          For even faster performance, compress large JPG files before uploading. This page already uses lazy loading and async decoding, but file compression will improve speed further.
         </div>
       </div>
     </section>
@@ -590,7 +739,7 @@
 
       <div class="slider-wrap">
         <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
-        <img id="slideImage" class="slide-image" src="" alt="Project image">
+        <img id="slideImage" class="slide-image" src="" alt="Project image" decoding="async">
         <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
       </div>
 
@@ -779,11 +928,16 @@
     let currentFolderIndex = 0;
     let currentSlideIndex = 0;
 
-    function renderCards() {
-      worksGrid.innerHTML = folders.map((folder, index) => `
+    function makeThumb(folder, index) {
+      return `
         <article class="work-card" onclick="openFolder(${index})">
           <div class="work-thumb">
-            <img src="${folder.cover}" alt="${folder.title}">
+            <img
+              src="${folder.cover}"
+              alt="${folder.title}"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
           <div class="work-content">
             <div class="work-top">
@@ -794,8 +948,11 @@
             <span class="open-link">Click to open slider →</span>
           </div>
         </article>
-      `).join("");
+      `;
+    }
 
+    function renderCards() {
+      worksGrid.innerHTML = folders.map((folder, index) => makeThumb(folder, index)).join("");
       folderCount.textContent = folders.length;
     }
 
@@ -826,15 +983,20 @@
     function updateSlider() {
       const folder = folders[currentFolderIndex];
       const images = folder.images;
+      const currentSrc = images[currentSlideIndex];
 
-      slideImage.src = images[currentSlideIndex];
-      slideImage.alt = folder.title + " image " + (currentSlideIndex + 1);
+      slideImage.src = currentSrc;
+      slideImage.alt = `${folder.title} image ${currentSlideIndex + 1}`;
       modalTitle.textContent = folder.title;
       modalSubtitle.textContent = folder.description;
       slideCounter.textContent = `${currentSlideIndex + 1} / ${images.length}`;
 
       dotsContainer.innerHTML = images.map((_, index) => `
-        <button class="dot ${index === currentSlideIndex ? "active" : ""}" onclick="goToSlide(${index})"></button>
+        <button
+          class="dot ${index === currentSlideIndex ? "active" : ""}"
+          onclick="goToSlide(${index})"
+          aria-label="Go to slide ${index + 1}">
+        </button>
       `).join("");
     }
 
