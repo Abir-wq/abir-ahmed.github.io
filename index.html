@@ -539,6 +539,7 @@
       height: min(72vh, 700px);
       object-fit: contain;
       background: #06101c;
+      cursor: zoom-in;
     }
 
     .slide-btn {
@@ -968,7 +969,7 @@
 
       <div class="slider-wrap">
         <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
-        <img id="slideImage" class="slide-image" src="" alt="Project image" decoding="async">
+        <img id="slideImage" class="slide-image" src="" alt="Project image" decoding="async" onclick="openCurrentSlideFullView()">
         <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
       </div>
 
@@ -1077,31 +1078,31 @@
         ]
       },
       {
-  title: "Planning, GIS & Spatial Analysis",
-  description: "GIS mapping, land use analysis, spatial datasets, and planning outputs.",
-  cover: "landuse-change.jpg",
-  images: [
-    "landuse-change.jpg",
-    "digitized-mouza-map.jpg",
-    "upazila-map.jpg",
-    "population-density-map.jpg",
-    "spatial-population-distribution.jpg",
-    "existing-landuse-map.jpg",
-    "administrative-boundary.jpg",
-    "administrative-boundaries-with-educational-institutions.jpg",
-    "site-demo-plan.jpeg",
-    "site-planning.jpeg",
-    "map-of-primary-schools.jpg",
-    "map-secondary-school.jpg",
-    "educational-institutions.jpg",
-    "health-facilities-mapping.jpg",
-    "teacher-student-ratio.jpg",
-    "primary-schools.jpg",
-    "available-open-space.jpg",
-    "open-space-locations.jpg",
-    "playgrounds-mapping.jpg"
-  ]
-},
+        title: "Planning, GIS & Spatial Analysis",
+        description: "GIS mapping, land use analysis, spatial datasets, and planning outputs.",
+        cover: "landuse-change.jpg",
+        images: [
+          "landuse-change.jpg",
+          "digitized-mouza-map.jpg",
+          "upazila-map.jpg",
+          "population-density-map.jpg",
+          "spatial-population-distribution.jpg",
+          "existing-landuse-map.jpg",
+          "administrative-boundary.jpg",
+          "administrative-boundaries-with-educational-institutions.jpg",
+          "site-demo-plan.jpeg",
+          "site-planning.jpeg",
+          "map-of-primary-schools.jpg",
+          "map-secondary-school.jpg",
+          "educational-institutions.jpg",
+          "health-facilities-mapping.jpg",
+          "teacher-student-ratio.jpg",
+          "primary-schools.jpg",
+          "available-open-space.jpg",
+          "open-space-locations.jpg",
+          "playgrounds-mapping.jpg"
+        ]
+      },
       {
         title: "Environment & Risk Assessment",
         description: "Environmental analysis, hazard mapping, and disaster-related assessments.",
@@ -1175,6 +1176,12 @@
       imageViewerModal.classList.remove("active");
       imageViewerImg.src = "";
       document.body.style.overflow = "auto";
+    }
+
+    function openCurrentSlideFullView() {
+      const folder = folders[currentFolderIndex];
+      const currentSrc = folder.images[currentSlideIndex];
+      openImageViewer(currentSrc, `${folder.title} image ${currentSlideIndex + 1}`);
     }
 
     function makeThumb(folder, index) {
@@ -1281,3 +1288,5 @@
   </script>
 </body>
 </html>
+
+only make sure that the full view image shown on max possible large size and there is a minimization arrow also, do not change anythimg else else please  just one code total for pasting master
