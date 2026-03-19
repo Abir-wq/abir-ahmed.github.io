@@ -595,7 +595,8 @@
     }
 
     .image-viewer-box {
-      width: min(1100px, 100%);
+      width: min(96vw, 1500px);
+      max-height: 96vh;
       background: linear-gradient(180deg, #0a1424, #07111f);
       border: 1px solid var(--line);
       border-radius: 24px;
@@ -605,12 +606,12 @@
 
     .image-viewer-body {
       background: #06101c;
-      padding: 20px;
+      padding: 12px;
     }
 
     .image-viewer-body img {
       width: 100%;
-      max-height: 78vh;
+      max-height: 86vh;
       object-fit: contain;
       margin: 0 auto;
     }
@@ -665,6 +666,14 @@
       .slide-btn {
         width: 44px;
         height: 44px;
+      }
+
+      .image-viewer-box {
+        width: min(98vw, 1500px);
+      }
+
+      .image-viewer-body img {
+        max-height: 82vh;
       }
     }
   </style>
@@ -1007,7 +1016,7 @@
 
       <div class="cv-actions">
         <a
-          href="https://drive.google.com/file/d/1uIKQuNRIijOtcg_KdXpVRVXPzDSBTXZ3/view?usp=sharing"
+          href="https://drive.google.com/file/d/1qWc13JF2or1sa8l7pOaTFiao5vqdWwn-/view?usp=sharing"
           class="btn btn-secondary"
           target="_blank"
           rel="noopener noreferrer"
@@ -1015,7 +1024,7 @@
           View CV
         </a>
         <a
-          href="https://drive.google.com/uc?export=download&id=1uIKQuNRIijOtcg_KdXpVRVXPzDSBTXZ3"
+          href="https://drive.google.com/uc?export=download&id=1qWc13JF2or1sa8l7pOaTFiao5vqdWwn-"
           class="btn btn-primary"
           target="_blank"
           rel="noopener noreferrer"
@@ -1288,5 +1297,3 @@
   </script>
 </body>
 </html>
-
-only make sure that the full view image shown on max possible large size and there is a minimization arrow also, do not change anythimg else else please  just one code total for pasting master
