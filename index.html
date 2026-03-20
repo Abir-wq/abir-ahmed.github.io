@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abir Ahmed | Portfolio</title>
   <meta name="description" content="Abir Ahmed - Urban Planning, GIS, Geospatial Analysis, Research, Certifications, CV, and fieldwork portfolio." />
-  <link rel="preload" as="image" href="abir-ahmed-profile.png" />
+  <link rel="preload" as="image" href="abir-ahmed-profile.webp" />
 
   <style>
     :root {
@@ -720,9 +720,9 @@
         </div>
 
         <div class="hero-card">
-          <div class="hero-preview" onclick="openImageViewer('abir-ahmed-profile.png', 'Abir Ahmed profile photo')">
+          <div class="hero-preview" onclick="openImageViewer('abir-ahmed-profile.webp', 'Abir Ahmed profile photo')">
             <img
-              src="abir-ahmed-profile.png"
+              src="abir-ahmed-profile.webp"
               alt="Abir Ahmed profile photo"
               loading="eager"
               decoding="async"
@@ -899,7 +899,7 @@
               <p>
                 This undergraduate thesis applies a Multinomial Logit Model to analyze the factors influencing mode choice for work-based trips in Agrabad, Chattogram. The study examines socio-economic variables, travel characteristics, and behavioral patterns to understand urban mobility decision-making.
               </p>
-              <a class="open-link" href="https://drive.google.com/file/d/1OtP8SY7tdFEsT8xpKaUdjwSLsY84wG_6/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <a class="open-link" href="Thesis/CV_Old_Abir_Ahmed.pdf" target="_blank" rel="noopener noreferrer">
                 View Thesis →
               </a>
             </div>
@@ -936,33 +936,51 @@
 
         <div class="works-grid">
           <article class="work-card static-card">
-            <img class="cert-preview" src="data-analysis-certificate.jpg" alt="Data Analyst certificate preview" loading="lazy" decoding="async" onclick="openImageViewer('data-analysis-certificate.jpg', 'Certified Data Analyst certificate preview')">
+            <img
+              class="cert-preview"
+              src="Certificates/data-analysis-certificate.jpg"
+              alt="Data Analyst certificate preview"
+              loading="lazy"
+              decoding="async"
+              onclick="openImageViewer('Certificates/data-analysis-certificate.jpg', 'Certified Data Analyst certificate preview')"
+            >
             <div class="work-content">
               <div class="work-top">
                 <h3>Certified Data Analyst</h3>
                 <span class="count-badge">Data Solution 360</span>
               </div>
               <p>
-                Successfully completed the 5-month Data Analyst Job Ready Bootcamp (Batch-2519). Issue date: 14 March 2026. Certificate ID: DS360DA2519AA19.
+                Successfully completed the 5-month Data Analyst Job Ready Bootcamp (Batch-2519). Issue date: 14 March 2026.
               </p>
               <div class="cert-actions">
-                <a class="btn btn-primary" href="https://drive.google.com/file/d/1hThh-sKHsb8e6eYf28NA95hGho_TfChc/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                <a class="btn btn-primary" href="Certificates/data-analysis-certificate.jpg" target="_blank" rel="noopener noreferrer">
+                  View Certificate
+                </a>
               </div>
             </div>
           </article>
 
           <article class="work-card static-card">
-            <img class="cert-preview" src="gis-certificate.jpg" alt="Fundamentals of GIS certificate preview" loading="lazy" decoding="async" onclick="openImageViewer('gis-certificate.jpg', 'Fundamentals of GIS certificate preview')">
+            <img
+              class="cert-preview"
+              src="Certificates/gis-certificate.jpg"
+              alt="Fundamentals of GIS certificate preview"
+              loading="lazy"
+              decoding="async"
+              onclick="openImageViewer('Certificates/gis-certificate.jpg', 'Fundamentals of GIS certificate preview')"
+            >
             <div class="work-content">
               <div class="work-top">
                 <h3>Fundamentals of GIS</h3>
                 <span class="count-badge">Coursera / UC Davis</span>
               </div>
               <p>
-                Successfully completed the online non-credit course “Fundamentals of GIS,” authorized by the University of California, Davis and offered through Coursera. Completed on 17 May 2021.
+                Completed “Fundamentals of GIS” course by University of California, Davis via Coursera.
               </p>
               <div class="cert-actions">
-                <a class="btn btn-primary" href="https://drive.google.com/file/d/1oh-Dx7e6XmigO9srxP1StFMPKB01yZOX/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                <a class="btn btn-primary" href="Certificates/gis-certificate.jpg" target="_blank" rel="noopener noreferrer">
+                  View Certificate
+                </a>
               </div>
             </div>
           </article>
@@ -1018,14 +1036,14 @@
       <div class="modal-head" style="padding: 0 0 16px; border-bottom: 1px solid var(--line); margin-bottom: 18px;">
         <div>
           <h3>Curriculum Vitae</h3>
-          <p>Open or download my CV directly from Google Drive.</p>
+          <p>Open or download my CV directly from GitHub Pages.</p>
         </div>
         <button class="close-btn" onclick="closeCvModal()">↙</button>
       </div>
 
       <div class="cv-actions">
         <a
-          href="https://drive.google.com/file/d/1qWc13JF2or1sa8l7pOaTFiao5vqdWwn-/view?usp=sharing"
+          href="Thesis/CV_Old_Abir_Ahmed.pdf"
           class="btn btn-secondary"
           target="_blank"
           rel="noopener noreferrer"
@@ -1033,7 +1051,7 @@
           View CV
         </a>
         <a
-          href="https://drive.google.com/uc?export=download&id=1qWc13JF2or1sa8l7pOaTFiao5vqdWwn-"
+          href="Thesis/CV_Old_Abir_Ahmed.pdf"
           class="btn btn-primary"
           target="_blank"
           rel="noopener noreferrer"
@@ -1169,7 +1187,7 @@
       preloadedImages.push(img);
     }
 
-    preloadImage("abir-ahmed-profile.png");
+    preloadImage("abir-ahmed-profile.webp");
 
     function toggleExperienceDetails() {
       const box = document.getElementById("experienceDetails");
