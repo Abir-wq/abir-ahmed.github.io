@@ -9,7 +9,7 @@ A responsive personal portfolio showcasing my academic background, professional 
 This portfolio presents my background in Urban and Regional Planning and my interests in GIS, Remote Sensing, Geospatial Analysis, Environmental Planning, and Spatial Data Science.
 
 It brings together my education, professional experience, research activities, selected work, and certifications in one place.
-![Portfolio Website Screenshot](screenshots/screenshot_website .png)
+![Portfolio Website Screenshot](screenshots/screenshot_website.png)
 
 ## Technologies Used
 
